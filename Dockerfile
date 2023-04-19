@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y openssl sqlite3
 # Install all node_modules, including dev dependencies
 FROM base as deps
 
-WORKDIR /myapp
+WORKDIR /puzzleclub
 
 ADD package.json package-lock.json .npmrc ./
 RUN npm install --production=false
@@ -18,18 +18,18 @@ RUN npm install --production=false
 # Setup production node_modules
 FROM base as production-deps
 
-WORKDIR /myapp
+WORKDIR /puzzleclub
 
-COPY --from=deps /myapp/node_modules /myapp/node_modules
+COPY --from=deps /puzzleclub/node_modules /puzzleclub/node_modules
 ADD package.json package-lock.json .npmrc ./
 RUN npm prune --production
 
 # Build the app
 FROM base as build
 
-WORKDIR /myapp
+WORKDIR /puzzleclub
 
-COPY --from=deps /myapp/node_modules /myapp/node_modules
+COPY --from=deps /puzzleclub/node_modules /puzzleclub/node_modules
 
 ADD prisma .
 RUN npx prisma generate
@@ -47,15 +47,15 @@ ENV NODE_ENV="production"
 # add shortcut for connecting to database CLI
 RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-cli && chmod +x /usr/local/bin/database-cli
 
-WORKDIR /myapp
+WORKDIR /puzzleclub
 
-COPY --from=production-deps /myapp/node_modules /myapp/node_modules
-COPY --from=build /myapp/node_modules/.prisma /myapp/node_modules/.prisma
+COPY --from=production-deps /puzzleclub/node_modules /puzzleclub/node_modules
+COPY --from=build /puzzleclub/node_modules/.prisma /puzzleclub/node_modules/.prisma
 
-COPY --from=build /myapp/build /myapp/build
-COPY --from=build /myapp/public /myapp/public
-COPY --from=build /myapp/package.json /myapp/package.json
-COPY --from=build /myapp/start.sh /myapp/start.sh
-COPY --from=build /myapp/prisma /myapp/prisma
+COPY --from=build /puzzleclub/build /puzzleclub/build
+COPY --from=build /puzzleclub/public /puzzleclub/public
+COPY --from=build /puzzleclub/package.json /puzzleclub/package.json
+COPY --from=build /puzzleclub/start.sh /puzzleclub/start.sh
+COPY --from=build /puzzleclub/prisma /puzzleclub/prisma
 
 ENTRYPOINT [ "./start.sh" ]
