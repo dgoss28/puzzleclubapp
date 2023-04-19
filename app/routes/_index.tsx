@@ -19,17 +19,9 @@ export default function Index() {
             <img className="h-8 w-auto" src="./puzzle-club-icon.png" alt=""></img>
           </a>
         </div>
-        <div className="flex lg:hidden">
-          <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span className="sr-only">Open main menu</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
         <div className="hidden lg:flex lg:gap-x-12">
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="lg:flex lg:flex-1 lg:justify-end">
         {user ? (
   <Link
     to="/notes"
@@ -42,7 +34,7 @@ export default function Index() {
       </div>
   </Link>
 ) : (
-  <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+  <div className="mt-10 flex items-right justify-right gap-x-6">
     <Link
       to="/login"
       className="rounded-md bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
