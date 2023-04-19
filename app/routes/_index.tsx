@@ -35,6 +35,9 @@ export default function Index() {
   </Link>
 ) : (
   <div className="mt-10 flex items-right justify-right gap-x-6">
+    <div className="rounded-md bg-white-600 px-3.5 py-2.5 text-sm font-semibold text-yellow shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600">
+      Beta
+    </div>
     <Link
       to="/login"
       className="rounded-md bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
@@ -65,7 +68,12 @@ export default function Index() {
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Puzzles all day err'day</h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">1 subscription, all the puzzles in the world.</p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#" className="rounded-md bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600">Get started</a>
+          <Link
+      to="/join"
+      className="rounded-md bg-yellow-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+    >
+      Get started
+    </Link>
             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
           </div>
         </div>
