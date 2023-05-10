@@ -82,6 +82,16 @@ export default function Join() {
 
   return (
     <div className="flex min-h-full flex-col justify-center">
+      <div className="flex min-h-full flex-col justify-center p7">
+            <a href="#">
+              <span className="sr-only">Puzzle Club</span>
+              <img
+                className="w-80 h-30 m-auto"
+                src="./puzzle-club-2023.png"
+                alt=""
+              ></img>
+            </a>
+          </div>
       <div className="mx-auto w-full max-w-md px-8">
         <Form method="post" className="space-y-6">
           <div>
@@ -102,7 +112,7 @@ export default function Join() {
                 autoComplete="email"
                 aria-invalid={actionData?.errors?.email ? true : undefined}
                 aria-describedby="email-error"
-                className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
+                className="w-full rounded border border-gray-500 px-2 py-1 text-lg focus:outline-yellow-700"
               />
               {actionData?.errors?.email && (
                 <div className="pt-1 text-red-700" id="email-error">
@@ -128,7 +138,7 @@ export default function Join() {
                 autoComplete="new-password"
                 aria-invalid={actionData?.errors?.password ? true : undefined}
                 aria-describedby="password-error"
-                className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
+                className="w-full rounded border border-gray-500 px-2 py-1 text-lg focus:outline-yellow-700"
               />
               {actionData?.errors?.password && (
                 <div className="pt-1 text-red-700" id="password-error">
@@ -141,7 +151,7 @@ export default function Join() {
           <input type="hidden" name="redirectTo" value={redirectTo} />
           <button
             type="submit"
-            className="w-full rounded bg-blue-500  px-4 py-2 text-white hover:bg-blue-600 focus:bg-blue-400"
+            className="w-full rounded bg-yellow-600  px-4 py-2 text-white hover:bg-yellow-700 focus:bg-yellow-400"
           >
             Create Account
           </button>
@@ -149,7 +159,7 @@ export default function Join() {
             <div className="text-center text-sm text-gray-500">
               Already have an account?{" "}
               <Link
-                className="text-blue-500 underline"
+                className="text-yellow-700 underline"
                 to={{
                   pathname: "/login",
                   search: searchParams.toString(),
