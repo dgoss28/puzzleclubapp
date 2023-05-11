@@ -15,7 +15,33 @@ import Nav from "./routes/nav";
 import Footer from "./routes/footer";
 import type { V2_MetaFunction } from "@remix-run/node";
 
-export const meta: V2_MetaFunction = () => [{ title: "Puzzle Club" }];
+export const meta: V2_MetaFunction = () => [
+  { title: "Puzzle Club" },
+  {
+    name: "description",
+    content: "The puzzle subscription",
+  },
+  {
+    name: "og:description",
+    content: "The puzzle subscription",
+  },
+  {
+    name: "og:site_name",
+    content: "Puzzle Club",
+  },
+  {
+    name: "og:title",
+    content: "Puzzle Club",
+  },
+  {
+    name: "og:image",
+    content: "./puzzle-club-2023.png",
+  },
+  {
+    name: "og:type",
+    content: "website",
+  },
+];
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: tailwindStylesheetUrl },
@@ -33,9 +59,9 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <link
-        href="https://fonts.googleapis.com/css?family=Montserrat"
-        rel="stylesheet"
-      ></link>
+          href="https://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet"
+        ></link>
         <Links />
       </head>
       <body className="h-full">

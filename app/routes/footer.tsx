@@ -22,7 +22,7 @@ export default function Footer() {
   ``` */}
       <div
         id="join-now"
-        className="relative isolate overflow-hidden bg-gradient-to-tr from-[#ff80b5] to-[#FFB612] py-16 sm:py-24 lg:py-32"
+        className="relative isolate overflow-hidden bg-gradient-to-tr from-[#ff80b5] to-[#FFB612] pb-8 pt-16 sm:pt-24 lg:pt-32"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
@@ -92,6 +92,16 @@ export default function Footer() {
           aria-hidden="true"
         >
           <div className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#FFB612] opacity-30"></div>
+        </div>
+        <div className="border-t border-slate-900/5 pb-0 pt-10">
+          <img
+            className="mx-auto h-5 w-auto text-slate-900"
+            src="./puzzle-club-2023.png"
+            alt=""
+          ></img>
+          <p className="mt-5 text-center text-sm leading-6 text-white">
+            © 2023 PuzzleClub, LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -180,4 +190,3 @@ export function Join() {
     </Form>
   );
 }
-

@@ -31,7 +31,7 @@ export async function createUser(email: User["email"], password?: string) {
   } else {
     return prisma.user.create({
       data: {
-        email
+        email,
       },
     });
   }

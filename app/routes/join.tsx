@@ -82,16 +82,16 @@ export default function Join() {
 
   return (
     <div className="flex min-h-full flex-col justify-center">
-      <div className="flex min-h-full flex-col justify-center p7">
-            <a href="#">
-              <span className="sr-only">Puzzle Club</span>
-              <img
-                className="w-80 h-30 m-auto"
-                src="./puzzle-club-2023.png"
-                alt=""
-              ></img>
-            </a>
-          </div>
+      <div className="p7 flex min-h-full flex-col justify-center">
+        <a href="#">
+          <span className="sr-only">Puzzle Club</span>
+          <img
+            className="h-30 m-auto w-80"
+            src="./puzzle-club-2023.png"
+            alt=""
+          ></img>
+        </a>
+      </div>
       <div className="mx-auto w-full max-w-md px-8">
         <Form method="post" className="space-y-6">
           <div>
